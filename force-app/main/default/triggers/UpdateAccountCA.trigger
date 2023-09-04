@@ -10,31 +10,28 @@ trigger UpdateAccountCA on Order ( after update, after delete) {
 
     System.debug('Nombre de compte ' + accountMap.size());
 
+    Map<String, decimal> majCAMap = new Map<String, Decimal>();
 
     for (String key : accountMap.keySet()){
-        System.debug(key);
-        list<Order> listOrders =  [SELECT Id, TotalAmount, AccountId, Status FROM Order where AccountId=:key];
-        system.debug('size listorders for this account ' + listOrders.size());
-
         decimal myAmount = 0;
-        for(Order myOrder : listOrders){
-            if (myOrder.Status.equals('Ordered')) {
-                    myAmount = myAmount + myOrder.TotalAmount;    
-            }          
+        for (Order order: [SELECT Id, TotalAmount, AccountId, Status FROM Order where AccountId=:key]) {      
+            if (order.Status.equals('Ordered')) {
+                myAmount = myAmount + order.TotalAmount;   
+            }        
         }
-        system.debug('my Amount total for this account ' + myAmount);
+        majCAMap.put(key, myAmount);
+        System.debug('Montant CA calculé pour compte ' + key + ' = ' +  myAmount);
 
-        Account acc = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:key ];
-        acc.Chiffre_d_affaire__c = myAmount;
-        update acc;
-        System.debug('Compte ' + key + ' mis à jour.');
     }
-    
- 
-
-   
 
 
-     
+    List<Account> updatedAccount = new List<Account>();
+    for (Account account: [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id =:accountMap.keySet() ]) {
+        account.Chiffre_d_affaire__c = majCAMap.get(account.Id);
+        updatedAccount.add(account);
+    }
+    update updatedAccount;
+
+         
 
 }
