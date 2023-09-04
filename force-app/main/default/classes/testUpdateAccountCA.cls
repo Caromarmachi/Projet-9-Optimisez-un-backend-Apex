@@ -16,7 +16,12 @@ private class testUpdateAccountCA {
         );
         Insert pbe;
 
-        Order o1 = new Order(AccountId = acc1.Id);
+        //Create the Order
+        Order o1 = new Order (
+            AccountId = acc1.Id, 
+            EffectiveDate = Date.today(), 
+            Status = 'Draft' 
+            );
         insert o1;
 
         OrderItem oi1 = new OrderItem (OrderId = o1.Id, PricebookEntryId = pbe.Id, Quantity=10, UnitPrice = 150);
