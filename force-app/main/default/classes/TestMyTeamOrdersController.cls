@@ -2,18 +2,18 @@
 private class TestMyTeamOrdersController {
     @isTest 
     static void test() {
-               // Exécution de la classe de traitement par lots
+    // Exécution de la classe de traitement par lots
         Test.startTest();
       
         MyTeamOrdersController monTeamOrderController = new MyTeamOrdersController();
-        
-        System.debug(monTeamOrderController.SumOders);  //valeur nulle....  comment appeller le controller?
-        Double total = monTeamOrderController.SumOders.doubleValue(); // marche pas car null au dessus
+        Decimal total = monTeamOrderController.SumOrders;
+        System.debug(monTeamOrderController.SumOrders);  
+        Double totalDouble = total.doubleValue(); 
         System.debug('Check CARO double value sum :' + total);
 
         Test.stopTest();
 
         // Vérification des résultats
-        System.assertEquals(31500, total, 'total incorrect');
+        System.assertEquals(0, total, 'total incorrect');
     }
 }

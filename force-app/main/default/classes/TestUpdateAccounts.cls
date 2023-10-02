@@ -5,8 +5,8 @@ private class TestUpdateAccounts {
     static void test() {
         System.debug('Log CARO (TestUpdateAccounts) : lancement du test');
 
-        Account acc1 = new Account(Name = 'Test Account 1');
-        insert acc1;
+        Account Account1 = new Account(Name = 'Test Account 1');
+        insert Account1;
 
         Product2 pd1 = new Product2(Name = 'Chemise Verte longue XYX', Family = 'Chemise');
         insert pd1;   
@@ -23,7 +23,7 @@ private class TestUpdateAccounts {
 
         // Créez l'Order en spécifiant le Pricebook
         Order o1 = new Order (
-            AccountId = acc1.Id, 
+            AccountId = Account1.Id, 
             EffectiveDate = Date.today(), 
             Status = 'Draft',
             Pricebook2Id = Test.getStandardPricebookId()
@@ -69,7 +69,7 @@ private class TestUpdateAccounts {
         System.debug('Log CARO (TestUpdateAccounts) : Verification des CA pour le test');
 
         // Vérification des résultats
-        acc1 = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id = :acc1.Id];
-        System.assertEquals(31500, acc1.Chiffre_d_affaire__c, 'Chiffre d\'affaires incorrect');
+        Account1 = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id = :Account1.Id];
+        System.assertEquals(31500, Account1.Chiffre_d_affaire__c, 'Chiffre d\'affaires incorrect');
     }
 }

@@ -1,10 +1,12 @@
-public without sharing class MyTeamOrdersController {  //la classe
-    public decimal SumOders{  // la methode, sans parametre ni parenthese?
-       get{   //methode dans methode? comment l'appeller dans ma classe de test?
-       AggregateResult groupedResults = [SELECT SUM(TotalAmount) total FROM Order where Order.Tec_Actuel_User__c = true];
-			return (decimal)groupedResults.get('total');
-
+public without sharing class MyTeamOrdersController {  
+    public decimal SumOrders {
+        get {
+            AggregateResult groupedResults = [SELECT SUM(TotalAmount) total FROM Order WHERE Order.Tec_Actuel_User__c = true];
+            if (groupedResults.get('total') != null) {
+                return (decimal)groupedResults.get('total');
+            } else {
+                return 0; 
+            }
         }
-        set;  // autre methode dans methode.... comment l'appeller?
     }
 }
