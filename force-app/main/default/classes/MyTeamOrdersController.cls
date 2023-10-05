@@ -5,7 +5,7 @@ public without sharing class MyTeamOrdersController {
             if (groupedResults.get('total') != null) {
                 return (decimal)groupedResults.get('total');
             } else {
-                return 31500; 
+                return 0; 
             }
         }
     }

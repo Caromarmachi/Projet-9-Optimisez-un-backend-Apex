@@ -12,7 +12,7 @@ private class TestUpdateAccounts {
         insert pd1;   
 
 
-        //Create the PricebookEntry
+    //Create the PricebookEntry
         PricebookEntry pbe = new PricebookEntry(
             Pricebook2Id = Test.getStandardPricebookId(),
             Product2Id = pd1.Id,
@@ -21,7 +21,7 @@ private class TestUpdateAccounts {
         );
         insert pbe;
 
-        // Créez l'Order en spécifiant le Pricebook
+    // Créez l'Order en spécifiant le Pricebook
         Order o1 = new Order (
             AccountId = Account1.Id, 
             EffectiveDate = Date.today(), 
@@ -57,7 +57,7 @@ private class TestUpdateAccounts {
 
 
 
-        // Exécution de la classe de traitement par lots
+    // Exécution de la classe de traitement par lots
         Test.startTest();
         System.debug('Log CARO (TestUpdateAccounts) : Lancement du batch');
 
@@ -68,7 +68,7 @@ private class TestUpdateAccounts {
 
         System.debug('Log CARO (TestUpdateAccounts) : Verification des CA pour le test');
 
-        // Vérification des résultats
+    // Vérification des résultats
         Account1 = [SELECT Id, Chiffre_d_affaire__c FROM Account WHERE Id = :Account1.Id];
         System.assertEquals(31500, Account1.Chiffre_d_affaire__c, 'Chiffre d\'affaires incorrect');
     }
