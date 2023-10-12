@@ -1,0 +1,57 @@
+[33mcommit b06578f73d9eb14c58460ad59c442bb66a939830[m[33m ([m[1;36mHEAD -> [m[1;32mProjet-9[m[33m)[m
+Author: Carolina Martinez <caromarmachi@gmail.com>
+Date:   Mon Oct 2 12:46:15 2023 +0200
+
+    Derniers modifications
+
+[33mcommit 75308d7352daa5f5901ba421225982c020d53783[m
+Author: Carolina Martinez <caromarmachi@gmail.com>
+Date:   Mon Oct 2 12:11:17 2023 +0200
+
+    Derniers vérifications de conventions de nommages
+
+[33mcommit 0aef8c9e39fef4487294295f3200d47c1a8b747f[m
+Author: Carolina Martinez <caromarmachi@gmail.com>
+Date:   Wed Sep 27 18:14:00 2023 +0200
+
+    Commit all changes
+
+[33mcommit a01ff2c70c849b3f421450644bf778610da14a39[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Carolina Martinez <caromarmachi@gmail.com>
+Date:   Mon Sep 4 11:31:23 2023 +0200
+
+    Version avec DML hors du body des loops
+
+[33mcommit 59a178758f7d56cc76903c41ed7ae782b923e4ec[m
+Author: Carolina Martinez <caromarmachi@gmail.com>
+Date:   Mon Sep 4 10:57:48 2023 +0200
+
+    Version qui fonctionne mais avec DML dans boucle.
+
+[33mcommit e287fdc8a74366255eb1ad90d138b46a536b4191[m
+Author: Damien Cuenot <11711525+dcuenot@users.noreply.github.com>
+Date:   Wed May 10 15:05:27 2023 +0200
+
+    Fix/update project (#1)
+    
+    * Add xml files
+    
+    * Fix except missing fields
+    
+    * fix class name
+    
+    * format post retrieve
+    
+    * Custom fields
+
+[33mcommit a923e2ed8a5d05965519113636956fb08e26531b[m
+Author: Damien Cuenot <11711525+dcuenot@users.noreply.github.com>
+Date:   Wed May 3 09:46:54 2023 +0200
+
+    Initial code
+
+[33mcommit 8320830a090674ff8ad14672149f1d705c8ec6e6[m
+Author: PeterGuek <76177881+PeterGuek@users.noreply.github.com>
+Date:   Mon May 1 21:19:25 2023 +0200
+
+    Initial commit
