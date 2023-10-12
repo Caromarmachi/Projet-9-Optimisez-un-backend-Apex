@@ -12,6 +12,5 @@ public class SumAmountService {
            
         }
 
-        // update newOrders;  //Pourquoi n'est ce pas nécessaire ici?
     }
 }
